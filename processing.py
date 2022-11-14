@@ -38,7 +38,7 @@ df['accepts_custom_requests'].loc[df['accepts_custom_requests'] == 'f'] = 0
 non_imputed_cols = ['shop_name', 'shop_id']
 
 #create an object for KNNImputer
-imputer = KNNImputer(n_neighbors=3)
+imputer = KNNImputer(n_neighbors=5)
 imputed_df = pd.DataFrame(imputer.fit_transform(df.drop(non_imputed_cols, axis=1)), columns=df.drop(non_imputed_cols, axis=1).columns)
 
 #merge the columns used in KNN imputation with those not used in KNN imputation
