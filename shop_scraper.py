@@ -1,6 +1,3 @@
-#fix number items for sale overcounting
-
-
 import requests
 from bs4 import BeautifulSoup
 import numpy as np
@@ -9,15 +6,19 @@ import pandas as pd
 import math
 import re
 
+#string to be searched in Etsy's shop search engine
+search_term = 'glassblowing'
+
 #define dataframe which will contain our data and which we will eventually write to csv
 df = pd.DataFrame()
 
-#total number of pages containing etsy shops to scrape
+#total number of pages containing shops to scrape
 number_pages_to_scrape = 492
 
-#number of shops to scrape between saving the data
+#number of shops to scrape between saving the data; we do this so that when we get an error, our work is not lost
 data_save_step = 25
 
+#exactly one item will be appended to each of these lists for every shop scraped.
 shop_name = []
 shop_id = []
 currency_id = []
@@ -29,7 +30,7 @@ rate_updates_enabled = []
 test_account = []
 accepts_custom_requests = []
 number_admirers = []
-number_items_listed = [] #listings_total_count
+number_items_listed = [] 
 total_sales = []
 number_reviews = []
 avg_rating = []
@@ -44,23 +45,11 @@ shop_number = 0
 
 
 
-
-
 for page_number in range(400, 493):
     #this is the url obtained by searching 'woodworking' into the shop search engine in Etsy and navigating to the page_number-th page of shops
-    url = f"https://www.etsy.com/search/shops?order=most_relevant&search_type=shops&page={page_number}&ref=pagination&search_query=woodworking"
+    url = f"https://www.etsy.com/search/shops?order=most_relevant&search_type=shops&page={page_number}&ref=pagination&search_query={search_term}"
     page = requests.get(url)
-
     soup = BeautifulSoup(page.content, 'html.parser')
-
-    # #iterate through hyperlinks on initial url
-    # #while shop_number <= 3:
-    # for init_links in initial_soup.find_all('a', href=True):    
-    #     #analyze each page of shops
-    #     if("ref=pagination" in init_links['href']):
-    #         page = requests.get(init_links['href'])
-    #         soup = BeautifulSoup(page.content, 'html.parser')
-
 
     #iterate through the shop hyperlinks on a given page
     for page_links in soup.find_all('a', class_='wt-card__link wt-display-flex-xs wt-width-full wt-mt-xs-2', href=True):
