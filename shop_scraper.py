@@ -45,7 +45,7 @@ shop_number = 0
 
 
 
-for page_number in range(400, 493):
+for page_number in range(0, number_pages_to_scrape):
     #this is the url obtained by searching 'woodworking' into the shop search engine in Etsy and navigating to the page_number-th page of shops
     url = f"https://www.etsy.com/search/shops?order=most_relevant&search_type=shops&page={page_number}&ref=pagination&search_query={search_term}"
     page = requests.get(url)
