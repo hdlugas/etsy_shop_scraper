@@ -47,5 +47,6 @@ merged_df = pd.concat([df[non_imputed_cols].reset_index(), imputed_df.reset_inde
 #create new predictor column of sales per unit time
 merged_df['sales_per_year'] = merged_df['total_sales'] / (2023- merged_df['starting_year'])
 
+#write processed dataframe to csv
 merged_df.to_csv('~/STA6840/final_project/data/final_processed_data.csv', index=False)
 
