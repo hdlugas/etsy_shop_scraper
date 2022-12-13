@@ -1,7 +1,14 @@
+# This script allows one to input:
+# i) a search_term to be searched in the Etsy shop search engine and 
+# ii) the number of pages to scrape. Note that as of 11/2022, there are 10 Etsy shops per page.
+# 
+# The script writes a csv file with one row per Etsy shop and 15 columns, each column being a characteristic of the given Etsy shop
+
+
+#import libraries
 import requests
 from bs4 import BeautifulSoup
 import numpy as np
-import csv
 import pandas as pd
 import math
 import re
@@ -9,16 +16,17 @@ import re
 #string to be searched in Etsy's shop search engine
 search_term = 'glassblowing'
 
+#total number of pages containing shops to scrape
+number_pages_to_scrape = 1
+
+#number of shops to scrape between saving the data; we do this so that if we get an error, our work is not lost
+data_save_step = 2
+
 #define dataframe which will contain our data and which we will eventually write to csv
 df = pd.DataFrame()
 
-#total number of pages containing shops to scrape
-number_pages_to_scrape = 492
 
-#number of shops to scrape between saving the data; we do this so that when we get an error, our work is not lost
-data_save_step = 25
-
-#exactly one item will be appended to each of these lists for every shop scraped.
+#exactly one item will be appended to each of these lists for every shop scraped
 shop_name = []
 shop_id = []
 currency_id = []
@@ -44,23 +52,28 @@ number_feature_items = []
 shop_number = 0
 
 
-
+#loop through pages on the Etsy shop search engine webpage; note that there are 10 Etsy shops per page as of 11/2022
 for page_number in range(0, number_pages_to_scrape):
     #this is the url obtained by searching 'woodworking' into the shop search engine in Etsy and navigating to the page_number-th page of shops
     url = f"https://www.etsy.com/search/shops?order=most_relevant&search_type=shops&page={page_number}&ref=pagination&search_query={search_term}"
+    
+    #get response and soup objects which represents the page_number-th page
     page = requests.get(url)
     soup = BeautifulSoup(page.content, 'html.parser')
 
-    #iterate through the shop hyperlinks on a given page
+    #iterate through the shop hyperlinks on the page_number-th page
     for page_links in soup.find_all('a', class_='wt-card__link wt-display-flex-xs wt-width-full wt-mt-xs-2', href=True):
-        print(page_links['href'])
+        #get response and soup objects for the given Etsy shop on the page_number-th page
         shop_page = requests.get(page_links['href'])
         shop_soup = BeautifulSoup(shop_page.content, 'html.parser')
 
+        #get shop identifiers, currency, and country
         shop_name.append(shop_soup.find_all('title')[0].contents[0][0:(len(shop_soup.find_all('title')[0].contents[0])-7)])
         shop_id.append(shop_page.text[shop_page.text.find('shop_id')+9:shop_page.text.find('shop_id')+16])
         currency_id.append(shop_page.text[shop_page.text.find('currency_id')+13:shop_page.text.find('currency_id')+16])
         country_id.append(shop_page.text[shop_page.text.find('country_id')+12:shop_page.text.find('country_id')+15])
+
+        #t/f flags:
         listing_enabled.append(shop_page.text[shop_page.text.find('listing_enabled')+17:shop_page.text.find('listing_enabled')+18])
         browsing_enabled.append(shop_page.text[shop_page.text.find('browsing_enabled')+18:shop_page.text.find('browsing_enabled')+19])
         buyer_location_restricted.append(shop_page.text[shop_page.text.find('buyer_location_restricted')+27:shop_page.text.find('buyer_location_restricted')+28])
@@ -68,7 +81,6 @@ for page_number in range(0, number_pages_to_scrape):
         test_account.append(shop_page.text[shop_page.text.find('test_account')+11:shop_page.text.find('test_account')+12])
         accepts_custom_requests.append(shop_page.text[shop_page.text.find('accepts_custom_requests')+25:shop_page.text.find('accepts_custom_requests')+26])
         number_feature_items.append(int(len(re.findall('shop_home_feat', shop_page.text))/2))
-
 
         #get number of shop admirers
         tmp_str = shop_page.text[shop_page.text.find('Favorite Shop')+15:shop_page.text.find('Favorite Shop')+20]
@@ -192,6 +204,5 @@ rate_updates_enabled, test_account, accepts_custom_requests, number_admirers, to
 starting_year, number_reviews, avg_rating, number_items_listed, avg_price, std_price, avg_feat_price, std_feat_price, number_feature_items)), columns=['shop_name', 
 'shop_id', 'currency_id', 'country_id', 'listing_enabled', 'browsing_enabled', 'buyer_location_restricted', 'rate_updated_enabled', 'test_account', 'accepts_custom_requests', 
 'number_admirers', 'total_sales', 'starting_year', 'number_reviews', 'avg_rating', 'number_items_listed', 'avg_price', 'std_price', 'avg_feat_price', 'std_feat_price', 'number_feature_items'])
-            df.to_csv('/home/hunter/STA6840/final_project/etsy_woodshop_data_tmp.csv')
-
+            df.to_csv('/home/hunter/STA6840/final_project/data/output.csv')
 
