@@ -2,7 +2,7 @@
 # i) a search_term to be searched in the Etsy shop search engine and 
 # ii) the number of pages to scrape. Note that as of 11/2022, there are 10 Etsy shops per page.
 # 
-# The script writes a csv file with one row per Etsy shop and 15 columns, each column being a characteristic of the given Etsy shop
+# This script writes a csv file with one row per Etsy shop and 15 columns, each column being a characteristic of the given Etsy shop.
 
 
 #import libraries
@@ -204,5 +204,5 @@ rate_updates_enabled, test_account, accepts_custom_requests, number_admirers, to
 starting_year, number_reviews, avg_rating, number_items_listed, avg_price, std_price, avg_feat_price, std_feat_price, number_feature_items)), columns=['shop_name', 
 'shop_id', 'currency_id', 'country_id', 'listing_enabled', 'browsing_enabled', 'buyer_location_restricted', 'rate_updated_enabled', 'test_account', 'accepts_custom_requests', 
 'number_admirers', 'total_sales', 'starting_year', 'number_reviews', 'avg_rating', 'number_items_listed', 'avg_price', 'std_price', 'avg_feat_price', 'std_feat_price', 'number_feature_items'])
-            df.to_csv('/home/hunter/STA6840/final_project/data/output.csv')
+            df.to_csv('/home/hunter/STA6840/final_project/data/output.csv', index=False)
 
