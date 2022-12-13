@@ -8,7 +8,7 @@ The script 'shop_scraper.py':
 The script 'processing.py':
 1. removes rows that have NaN for avg_rating.
 2. removes columns that have the same constant value for all observations.
-3. replace 't' and 'f' entries with '1' and '0' in 'accepts_custom_requests' predictor column, respectively.
+3. replace 't' and 'f' entries with '1' and '0' in 'accepts_custom_requests' column, respectively.
 4. imputes NaN entries using K-Nearest Neighbors with K=5.
 5. creates new predictor column 'sales_per_year'.
 6. writes processed dataframe to csv.
