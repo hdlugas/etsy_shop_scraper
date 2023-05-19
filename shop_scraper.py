@@ -2,7 +2,7 @@
 # i) a search_term to be searched in the Etsy shop search engine and 
 # ii) the number of pages to scrape. Note that as of 11/2022, there are 10 Etsy shops per page.
 # 
-# This script writes a csv file with one row per Etsy shop and 15 columns, each column being a characteristic of the given Etsy shop.
+# This script writes a csv file with one row per Etsy shop and 21 columns, each column being a characteristic of the given Etsy shop.
 
 
 #import libraries
