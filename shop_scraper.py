@@ -204,5 +204,5 @@ rate_updates_enabled, test_account, accepts_custom_requests, number_admirers, to
 starting_year, number_reviews, avg_rating, number_items_listed, avg_price, std_price, avg_feat_price, std_feat_price, number_feature_items)), columns=['shop_name', 
 'shop_id', 'currency_id', 'country_id', 'listing_enabled', 'browsing_enabled', 'buyer_location_restricted', 'rate_updated_enabled', 'test_account', 'accepts_custom_requests', 
 'number_admirers', 'total_sales', 'starting_year', 'number_reviews', 'avg_rating', 'number_items_listed', 'avg_price', 'std_price', 'avg_feat_price', 'std_feat_price', 'number_feature_items'])
-            df.to_csv('/home/hunter/STA6840/final_project/data/output.csv', index=False)
+            df.to_csv('/home/hunter/etsy_shop_scraper/data/output.csv', index=False)
 
