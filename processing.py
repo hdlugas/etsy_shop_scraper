@@ -7,7 +7,7 @@ pd.set_option('display.max_columns', None)
 
 
 #import scraped data
-df = pd.read_csv('~/STA6840/final_project/data/output.csv')
+df = pd.read_csv('~/etsy_shop_scraper/data/output.csv')
 
 #drop rows that have NaN for average rating
 df = df.dropna(subset=['avg_rating'])
