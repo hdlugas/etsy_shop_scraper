@@ -1,7 +1,5 @@
 library(ggplot2)
 library(ggcorrplot)
-library(grid)
-library(vcd)
 library(dplyr)
 
 #import processed data
