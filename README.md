@@ -28,4 +28,4 @@ The script 'visuals.R' inputs the output csv file from the script 'processing.py
 <img src="https://github.com/hdlugas/etsy_shop_scraper/assets/73852653/e72122f5-f54c-460e-8f6f-2a6978f6828a" width="400" /> <br />
 
 3. the distribution of the response variable grouped by a given predictor variable (in this case, the response variable is shop rating and the predictor variables are number of shop admirers and a flag indicating whether the shop accepts custom requests)<br />
-<img src="https://github.com/hdlugas/etsy_shop_scraper/assets/73852653/4960abd6-29e8-4e2d-a1ce-953b743901ee" width="400" />
+<img src="https://github.com/hdlugas/etsy_shop_scraper/assets/73852653/4960abd6-29e8-4e2d-a1ce-953b743901ee" width="700" />
