@@ -6,6 +6,7 @@ The script 'shop_scraper.py':
 2. writes a csv which has one row for each Etsy shop scraped and columns ['shop_name', 'shop_id', 'currency_id', 'country_id', 'listing_enabled', 'browsing_enabled', 'buyer_location_restricted', 'rate_updated_enabled', 'test_account', 'accepts_custom_requests', 'number_admirers', 'total_sales', 'starting_year', 'number_reviews', 'avg_rating', 'number_items_listed', 'avg_price', 'std_price', 'avg_feat_price', 'std_feat_price', 'number_feature_items'] to a path that you must change. 
 
 <br />
+<br />
 
 The script 'processing.py' inputs the output csv file from the script 'shop_scraper.py' and:
 1. removes rows that have NaN for avg_rating.
@@ -16,6 +17,8 @@ The script 'processing.py' inputs the output csv file from the script 'shop_scra
 6. writes processed dataframe to csv.
 
 <br />
+<br />
+
 
 The script 'visuals.R' inputs the output csv file from the script 'processing.py' and generate figures of:
 1. the correlation matrix of the processed data frame.<br />
