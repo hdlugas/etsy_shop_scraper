@@ -1,5 +1,5 @@
 # etsy_shop_scraper
-This repository contains a script that scrapes Etsy shops using Python's Beautiful Soup library and a script which processes the data.
+This repository contains a python script that scrapes Etsy shops using the Beautiful Soup library and a python script which processes the data.
 
 The script 'shop_scraper.py':
 1. inputs i) a keyword that is searched in the Etsy shop search engine and ii) the total number of pages (each page has 10 shops as of 11/2022) to be scraped.
