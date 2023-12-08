@@ -18,6 +18,7 @@ The script 'processing.py' inputs the output csv file from the script 'shop_scra
 
 <br />
 <br />
+![shop_rating_distribution](https://github.com/hdlugas/etsy_shop_scraper/assets/73852653/102dae69-5349-408e-8e05-0f1540d86c4d)
 
 
 The script 'visuals.R' inputs the output csv file from the script 'processing.py' and generate figures of:
