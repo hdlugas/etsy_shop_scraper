@@ -19,7 +19,8 @@ The script 'processing.py' inputs the output csv file from the script 'shop_scra
 <br />
 <br />
 
-The script 'visuals.R' inputs the output csv file from the script 'processing.py' and generates figures of:
+The sc![stacked_hist_number_feature_items]()
+ript 'visuals.R' inputs the output csv file from the script 'processing.py' and generates figures of:
 1. the correlation matrix of the processed data frame.<br />
 <img src="https://github.com/hdlugas/etsy_shop_scraper/assets/73852653/a83a5754-cdf2-4cd3-bbfe-cb20096dac0a" width="600" /> <br />
 
@@ -29,6 +30,7 @@ The script 'visuals.R' inputs the output csv file from the script 'processing.py
 3. the distribution of the response variable grouped by a given predictor variable (in this case, the response variable is shop rating and the predictor variables are number of shop admirers and a flag indicating whether the shop accepts custom requests)<br />
 <p float="left">
   <img src="https://github.com/hdlugas/etsy_shop_scraper/assets/73852653/00eeb75a-fc40-4267-a5fe-7f812dc6495e" width="400" />
+  <img src="https://github.com/hdlugas/etsy_shop_scraper/assets/73852653/87a4b86e-7232-4ba8-a567-522fd5e5125c" width="400" />
   <img src="https://github.com/hdlugas/etsy_shop_scraper/assets/73852653/f1a642a0-ec7f-4337-b389-c295320a2626" width="400" />
   <img src="https://github.com/hdlugas/etsy_shop_scraper/assets/73852653/8d400dae-df5c-4391-bc60-a0b693f7588f" width="400" />
 </p>
