@@ -7,6 +7,7 @@ The script 'shop_scraper.py':
 
 <br />
 <br />
+<br />
 
 The script 'processing.py' inputs the output csv file from the script 'shop_scraper.py' and:
 1. removes rows that have NaN for avg_rating.
@@ -18,10 +19,9 @@ The script 'processing.py' inputs the output csv file from the script 'shop_scra
 
 <br />
 <br />
-![stacked_hist_number_feature_items]()
+<br />
 
-The sc![stacked_hist_number_feature_items]()
-ript 'visuals.R' inputs the output csv file from the script 'processing.py' and generates figures of:
+The script 'visuals.R' inputs the output csv file from the script 'processing.py' and generates figures of:
 1. the correlation matrix of the processed data frame.<br />
 <img src="https://github.com/hdlugas/etsy_shop_scraper/assets/73852653/a83a5754-cdf2-4cd3-bbfe-cb20096dac0a" width="600" /> <br />
 
