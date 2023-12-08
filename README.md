@@ -7,9 +7,8 @@ The script 'shop_scraper.py':
 
 <br />
 <br />
-<br />
 
-The script 'processing.py' inputs the output csv file from the script 'shop_scraper.py' and:
+The script 'processing.py' inputs the csv file of scraped data from the script 'shop_scraper.py' and:
 1. removes rows that have NaN for avg_rating.
 2. removes columns that have the same constant value for all observations.
 3. replace 't' and 'f' entries with '1' and '0' in 'accepts_custom_requests' column, respectively.
@@ -17,7 +16,6 @@ The script 'processing.py' inputs the output csv file from the script 'shop_scra
 5. creates new predictor column 'sales_per_year'.
 6. writes processed dataframe to csv.
 
-<br />
 <br />
 <br />
 
