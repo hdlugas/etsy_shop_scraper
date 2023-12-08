@@ -27,7 +27,6 @@ The script 'visuals.R' inputs the output csv file from the script 'processing.py
 <img src="https://github.com/hdlugas/etsy_shop_scraper/assets/73852653/102dae69-5349-408e-8e05-0f1540d86c4d" width="600" /> <br />
 
 3. the distribution of a given variable (e.g. accepts custom requests flag, number of items listed, average item price, number of feature items) grouped by a given categorical variable (e.g. average shop rating) <br />
-<img src="https://github.com/hdlugas/etsy_shop_scraper/assets/73852653/fdaf1705-dc8c-4006-b230-f2ba1cf547dd" width="600" /> <br />
 <img src="https://github.com/hdlugas/etsy_shop_scraper/assets/73852653/ed2d35a4-3e59-498b-8ca8-47b98e552ec4" width="800" /> <br />
 
 
