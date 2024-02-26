@@ -6,7 +6,7 @@ The script 'shop_scraper.py':
 <br />
 
 The correlation matrix of the processed data frame:<br />
-<img src="https://github.com/hdlugas/etsy_shop_scraper/assets/73852653/a83a5754-cdf2-4cd3-bbfe-cb20096dac0a" width="600" /> <br />
+<img src="https://github.com/hdlugas/etsy_shop_scraper/assets/73852653/9e5b348a-67ac-4393-a029-e57a375d54ed" width="600" /> <br />
 
 The distribution of a given variable (taken here to be shop rating):<br />
 <img src="https://github.com/hdlugas/etsy_shop_scraper/assets/73852653/102dae69-5349-408e-8e05-0f1540d86c4d" width="600" /> <br />
